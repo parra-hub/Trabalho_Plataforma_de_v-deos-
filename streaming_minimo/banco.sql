@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS streaming_simples
+CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE streaming_simples;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS videos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(150) NOT NULL,
+    descricao TEXT NOT NULL,
+    arquivo VARCHAR(255) NOT NULL,
+    usuario_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
