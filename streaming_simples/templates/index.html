@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vídeos</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Vídeos</h1>
+    <form onsubmit="buscarVideos(); return false;">
+        <label for="termo-video">Título ou descrição:</label>
+        <input id="termo-video" type="text">
+        <label for="pagina">Página:</label>
+        <input id="pagina" type="number" min="1" step="1" value="1" required>
+        <button>Buscar vídeos</button>
+    </form>
+    <div id="videos"></div>
+    <hr>
+    <h2>Usuários</h2>
+    <form onsubmit="buscarUsuarios(); return false;">
+        <label for="termo-usuario">Nome:</label>
+        <input id="termo-usuario" type="text">
+        <label for="pagina-usuario">Página:</label>
+        <input id="pagina-usuario" type="number" min="1" step="1" value="1" required>
+        <button>Buscar usuários</button>
+    </form>
+    <ul id="usuarios"></ul>
+    <p id="erro" role="alert"></p>
+    <script src="/static/main.js"></script>
+    <script>
+        buscarVideos();
+        buscarUsuarios();
+    </script>
+</body>
+</html>
